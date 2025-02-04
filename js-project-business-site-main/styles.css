@@ -1,0 +1,23 @@
+header {
+  display: flex;
+}
+
+.container {
+  display: grid;
+}
+
+footer {
+  display: flex;
+}
+
+/*larger than tablet - desktop. starting here */
+@media (min-width: 1025px) {}
+
+/*larger than mobile - tablet */
+@media (min-width: 667px) and (max-width: 1024) {}
+
+/*mobile < 667px*/
+@media (max-width: 666px) and (orientation: portrait) {}
+
+/*mobile in landscape*/
+@media (max-width: 666px) and (orientation: landscape) {}

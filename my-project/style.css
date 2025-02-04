@@ -1,0 +1,32 @@
+#one {
+  background-color: rgb(165, 106, 106);
+  width: 500px;
+  height: 500px;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+#two {
+  background-color: rgb(56, 105, 89);
+  position: relative;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+#three {
+  background-color: rgb(63, 65, 65);
+  width: 50%;
+  height: 50%;
+  position: relative;
+  text-align: center;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
