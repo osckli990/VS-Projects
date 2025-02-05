@@ -4,6 +4,31 @@ body {
   font-optical-sizing: auto;
 }
 
+.loader {
+  position: fixed;
+  z-index: 4;
+  background-color: black;
+  height: 100vh;
+  width: 100%;
+  margin-top: -115px;
+  animation: load 0.5s linear 2s;
+  animation-fill-mode: forwards;
+}
+
+.spinner {
+  display: fixed;
+  z-index: 5;
+  height: 120px;
+  width: 120px;
+  margin: 50vh auto;
+  border: 6px solid;
+  border-color: white transparent white transparent;
+  border-radius: 50%;
+  animation: spin 1.5s ease infinite, load 0.5 linear 2s;
+  animation-fill-mode: forwards;
+}
+
+
 header {
   display: flex;
   position: fixed;
@@ -71,23 +96,37 @@ p {}
   justify-content: center;
   align-items: center;
   margin: 0;
-  padding: 0;
-
 }
 
 .item-txt {
   margin: 0;
-  padding: 0;
+  height: 350px;
+}
+
+.txtone {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.txtfive {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.txtfive p {
+  text-align: end;
 }
 
 img {
   flex-shrink: 0;
   max-width: 100%;
   max-height: 100%;
+  border-radius: 8px;
 }
-
-.img-a {}
-
 
 .img-d {
   grid-row: span 2;
@@ -96,21 +135,81 @@ img {
   overflow: hidden;
 }
 
-.img-e {
+.keep {
   grid-column: span 2;
-  max-width: 55%;
-  max-height: 55%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  border-radius: 8px;
+}
+
+.img-e {
+  max-width: 45%;
+  max-height: 45%;
 }
 
 .txtspec {
   grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 300px;
 }
 
 footer {
   display: flex;
   background-color: #e97004;
   height: 120px;
-  margin: 0;
+  margin-top: auto;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.foot {
+  display: flex;
+  margin-left: 3%;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-parenttwo {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5px;
+  margin-right: 3%;
+  margin-top: 1%;
+}
+
+.flex-childtwo {
+  text-decoration: none;
+}
+
+.flex-childtwo:hover {}
+
+.logo {
+  margin-top: 5px;
+  width: 40px;
+  height: auto;
+  flex-shrink: 0;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+@keyframes spin {
+  to {
+    rotate: 360deg;
+  }
+}
+
+@keyframes load {
+  to {
+    opacity: 0;
+    display: none;
+  }
 }
 
 /*larger than tablet - desktop. starting here */
@@ -119,7 +218,7 @@ footer {
 /*larger than mobile - tablet */
 @media (min-width: 667px) and (max-width: 1024) {}
 
-/*mobile < 667px*/
+/*mobile < 667px make sure 320px works*/
 @media (max-width: 666px) {}
 
 /*mobile in landscape*/
