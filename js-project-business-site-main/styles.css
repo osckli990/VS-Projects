@@ -2,6 +2,7 @@ body {
   margin: 0 auto;
   font-family: "Merienda", serif;
   font-optical-sizing: auto;
+  padding: 0;
 }
 
 .loader {
@@ -20,7 +21,7 @@ body {
   z-index: 5;
   height: 120px;
   width: 120px;
-  margin: 50vh auto;
+  margin: 40vh auto;
   border: 6px solid;
   border-color: white transparent white transparent;
   border-radius: 50%;
@@ -35,7 +36,7 @@ header {
   margin-top: -115px;
   height: 120px;
   width: 100%;
-  background-color: #e97004;
+  background-color: #f58d42;
   z-index: 1;
   flex-wrap: nowrap;
   justify-content: space-between;
@@ -65,23 +66,17 @@ h1 {
   text-decoration: none;
 }
 
-.flex-child:hover {}
-
 .container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 2fr 1fr repeat(3, 1fr);
   gap: 2.5%;
-  margin: 115px 5% 0 5%;
+  margin: 115px 5% 8% 5%;
   justify-items: center;
   align-items: center;
   z-index: 2;
   background-color: white;
 }
-
-h2 {}
-
-p {}
 
 .item-img {
   display: flex;
@@ -100,7 +95,7 @@ p {}
 
 .item-txt {
   margin: 0;
-  height: 350px;
+  height: 100%;
 }
 
 .txtone {
@@ -160,9 +155,8 @@ img {
 
 footer {
   display: flex;
-  background-color: #e97004;
+  background-color: #f58d42;
   height: 120px;
-  margin-top: auto;
   flex-wrap: nowrap;
   justify-content: space-between;
 }
@@ -178,21 +172,18 @@ footer {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   gap: 5px;
   margin-right: 3%;
-  margin-top: 1%;
 }
 
 .flex-childtwo {
   text-decoration: none;
 }
 
-.flex-childtwo:hover {}
-
 .logo {
   margin-top: 5px;
-  width: 40px;
+  width: 30px;
   height: auto;
   flex-shrink: 0;
   max-width: 100%;
@@ -212,14 +203,172 @@ footer {
   }
 }
 
-/*larger than tablet - desktop. starting here */
-@media (min-width: 1025px) {}
+/*desktop - larger. starting*/
+@media (min-width: 1410px) {}
+
+/*larger than tablet - desktop */
+@media (min-width: 1025px) and (max-width: 1409px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr) repeat(4, 0.3fr);
+    gap: 1%;
+    margin: 115px 5% 8% 5%;
+  }
+
+  .item-txt {
+    margin: 0;
+    height: 100%;
+  }
+
+  .imgtwo-a {
+    opacity: 0;
+    display: none;
+  }
+
+  .img-d {
+    grid-row: span 1;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+  }
+
+  .txtfive {
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+
+  .txtspec {
+    grid-column: span 2;
+    justify-content: flex-end;
+    height: 300px;
+  }
+}
 
 /*larger than mobile - tablet */
-@media (min-width: 667px) and (max-width: 1024) {}
+@media (min-width: 667px) and (max-width: 1024px) {
+  header {
+    margin-top: -95px;
+    height: 100px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .flex-child {
+    font-size: 14px;
+  }
+
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr) repeat(4, 0.3fr);
+    gap: 1%;
+    margin: 95px 5% 5% 5%;
+  }
+
+  .item-txt {
+    margin: 0;
+    height: 110%;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .imgtwo-a {
+    opacity: 0;
+    display: none;
+  }
+
+  .img-d {
+    grid-row: span 1;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+  }
+
+  .txtfive {
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+
+  .txtspec {
+    grid-column: span 2;
+    justify-content: flex-end;
+  }
+
+  .txtspec {
+    height: 400px;
+  }
+
+  footer h2 {
+    font-size: 20px;
+  }
+
+  .flexchildtwo {
+    font-size: 14px;
+  }
+
+}
 
 /*mobile < 667px make sure 320px works*/
-@media (max-width: 666px) {}
+@media (max-width: 666px) {
+  header {
+    opacity: 0;
+    display: none;
+  }
+
+  .container {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, 1fr) repeat(4, 0.3fr);
+    gap: 0;
+    margin: 0 5% 0 5%
+  }
+
+  .item-txt {
+    margin: 0;
+    height: 110%;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .imgtwo-a {
+    opacity: 0;
+    display: none;
+  }
+
+  .img-d {
+    grid-row: span 1;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+  }
+
+  .txtfive {
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+
+  .txtspec {
+    grid-column: span 1;
+    justify-content: flex-end;
+  }
+
+  .txtspec {
+    height: 400px;
+  }
+
+}
 
 /*mobile in landscape*/
 @media (orientation: landscape) {}
