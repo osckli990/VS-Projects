@@ -10,12 +10,15 @@ body {
 /*font optical sizing help readability when chaning font size. included with google font*/
 
 .loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
+  margin-top: -115px;
   z-index: 4;
   background-color: black;
   height: 100vh;
   width: 100%;
-  margin-top: -115px;
   animation: load 0.5s linear 2s;
   animation-fill-mode: forwards;
 }
@@ -30,7 +33,6 @@ Fill-mode changes to css affected by animation becomes permanent until reloaded
   z-index: 5;
   height: 120px;
   width: 120px;
-  margin: 40vh auto;
   border: 6px solid;
   border-color: white transparent white transparent;
   border-radius: 50%;
@@ -42,11 +44,11 @@ Fill-mode changes to css affected by animation becomes permanent until reloaded
 header {
   display: flex;
   position: fixed;
-  margin-top: -115px;
+  top: 0;
   height: 120px;
   width: 100%;
   background-color: #f58d42;
-  z-index: 1;
+  z-index: 3;
   justify-content: space-between;
 }
 
@@ -63,6 +65,14 @@ h1 {
   font-weight: bold;
 }
 
+.hidden-ham {
+  display: none;
+}
+
+.all-bar {
+  display: none;
+}
+
 .flex-parent {
   display: flex;
   flex-wrap: nowrap;
@@ -74,6 +84,11 @@ h1 {
 
 .flex-child {
   text-decoration: none;
+  transition: 0.25s;
+}
+
+.flex-child:hover {
+  margin-top: 15px;
 }
 
 .container {
@@ -101,28 +116,29 @@ h1 {
   justify-content: center;
   align-items: center;
   margin: 0;
+  padding: 0;
 }
 
-.item-txt {
+.item-text {
   margin: 0;
   height: 100%;
 }
 
-.txtone {
+.text-jack {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 }
 
-.txtfive {
+.text-news {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-end;
 }
 
-.txtfive p {
+.text-news p {
   text-align: end;
 }
 
@@ -139,7 +155,7 @@ img {
 
 /*minimum width to certain images*/
 
-.img-d {
+.img-x {
   grid-row: span 2;
   max-width: 100%;
   max-height: 100%;
@@ -158,12 +174,12 @@ img {
   border-radius: 8px;
 }
 
-.img-e {
+.img-y {
   max-width: 45%;
   max-height: 45%;
 }
 
-.txtspec {
+.text-wide {
   grid-column: span 2;
   display: flex;
   flex-direction: column;
@@ -176,7 +192,6 @@ footer {
   display: flex;
   background-color: #f58d42;
   height: 120px;
-  flex-wrap: nowrap;
   justify-content: space-between;
 }
 
@@ -187,16 +202,15 @@ footer {
   align-items: center;
 }
 
-.flex-parenttwo {
+.flex-parent-two {
   display: flex;
-  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
   gap: 5px;
   margin-right: 3%;
 }
 
-.flex-childtwo {
+.flex-child-two {
   text-decoration: none;
 }
 
@@ -207,6 +221,13 @@ footer {
   flex-shrink: 0;
   max-width: 100%;
   max-height: 100%;
+  transition: 0.25s;
+}
+
+.flex-child-two:hover {
+  .logo {
+    margin-top: 15px;
+  }
 }
 
 @keyframes spin {
@@ -217,13 +238,14 @@ footer {
 
 @keyframes load {
   to {
-    opacity: 0;
     display: none;
   }
 }
 
 /*keyframes for the starting animations. "load" being the large background*/
 
+
+/*repeating code because of starting responsive code from desktop*/
 /*larger than tablet - desktop */
 @media (min-width: 1025px) and (max-width: 1409px) {
   .container {
@@ -233,29 +255,28 @@ footer {
     margin: 115px 5% 8% 5%;
   }
 
-  .item-txt {
+  .item-text {
     margin: 0;
     height: 100%;
   }
 
-  .imgtwo-a {
-    opacity: 0;
+  .img-body-a {
     display: none;
   }
 
-  .img-d {
+  .img-x {
     grid-row: span 1;
     max-width: 100%;
     max-height: 100%;
     overflow: hidden;
   }
 
-  .txtfive {
+  .text-news {
     justify-content: flex-start;
     align-items: flex-end;
   }
 
-  .txtspec {
+  .text-wide {
     grid-column: span 2;
     justify-content: flex-end;
     height: 300px;
@@ -270,13 +291,181 @@ footer {
 
   /*started having problems with viewport, where 100% didnt cover the screen*/
 
-  .spinner {
-    margin: 55vh auto;
+  header {
+    top: 0;
+    height: 100px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .flex-parent {
+    display: none;
+  }
+
+  .hidden-ham {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2%;
+    transition: 0.25s;
+  }
+
+  .all-bar {
+    display: block;
+    width: 35px;
+    height: 3px;
+    background-color: black;
+    margin: 4px 0;
+    transition: 0.25s;
+  }
+
+  .hidden-ham:hover {
+    .all-bar {
+      margin: 0;
+    }
+  }
+
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr) repeat(4, 0.3fr);
+    gap: 1%;
+    margin: 95px 5% 5% 5%;
+  }
+
+  .item-text {
+    margin-top: 60px;
+    height: 110%;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .img-body-a {
+    display: none;
+  }
+
+  .img-x {
+    grid-row: span 1;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+  }
+
+  .text-news {
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+
+  .text-wide {
+    grid-column: span 2;
+    justify-content: flex-end;
+    height: 250px;
+  }
+
+  footer h2 {
+    font-size: 20px;
+  }
+
+  .flexchild-two {
+    font-size: 14px;
+  }
+
+}
+
+/*mobile < 667px make sure 320px works*/
+@media (max-width: 666px) {
+  body {
+    margin: 0;
+  }
+
+  .loader {
+    height: 120vh;
   }
 
   header {
-    margin-top: -95px;
-    height: 100px;
+    display: none;
+  }
+
+  .container {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, 0.5fr) repeat(4, 0.3fr);
+    gap: 0;
+    margin: 0;
+  }
+
+  .item-text {
+    margin: 0;
+    height: 110%;
+  }
+
+  img {
+    border-radius: 0;
+  }
+
+  .img-body-a {
+    display: none;
+  }
+
+  .img-x {
+    grid-row: span 1;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    height: 500px;
+  }
+
+  .text-jack,
+  .text-news,
+  .text-wide,
+  .text-sandwich {
+    padding-left: 10px;
+    padding-right: 15px;
+  }
+
+  .text-news {
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+
+  .text-wide {
+    grid-column: span 1;
+    justify-content: flex-end;
+    height: 100%;
+  }
+
+  .keep {
+    grid-column: span 1;
+    border-radius: 0;
+    height: 250px;
+  }
+
+  .foot {
+    display: none;
+  }
+
+  footer {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/*mobile in landscape, can't get it specifically to mobile*/
+/*
+@media (orientation: landscape) {
+  .loader {
+    height: 110vh;
+  }
+
+  header {
+    display: none;
   }
 
   h1 {
@@ -294,7 +483,7 @@ footer {
     margin: 95px 5% 5% 5%;
   }
 
-  .item-txt {
+  .item-text {
     margin-top: 60px;
     height: 110%;
   }
@@ -307,24 +496,23 @@ footer {
     font-size: 14px;
   }
 
-  .imgtwo-a {
-    opacity: 0;
+  .img-body-a {
     display: none;
   }
 
-  .img-d {
+  .img-x {
     grid-row: span 1;
     max-width: 100%;
     max-height: 100%;
     overflow: hidden;
   }
 
-  .txtfive {
+  .text-news {
     justify-content: flex-start;
     align-items: flex-end;
   }
 
-  .txtspec {
+  .text-wide {
     grid-column: span 2;
     justify-content: flex-end;
     height: 250px;
@@ -334,97 +522,10 @@ footer {
     font-size: 20px;
   }
 
-  .flexchildtwo {
+  .flexchild-two {
     font-size: 14px;
   }
 
+
 }
-
-/*mobile < 667px make sure 320px works*/
-@media (max-width: 666px) {
-  body {
-    margin: 0;
-  }
-
-  .loader {
-    height: 120vh;
-  }
-
-  .spinner {
-    margin: 60vh auto;
-  }
-
-  header {
-    opacity: 0;
-    display: none;
-  }
-
-  .container {
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(3, 0.5fr) repeat(4, 0.3fr);
-    gap: 0;
-    margin: 0;
-  }
-
-  .item-txt {
-    margin: 0;
-    height: 110%;
-  }
-
-  img {
-    border-radius: 0;
-  }
-
-  .imgtwo-a {
-    opacity: 0;
-    display: none;
-  }
-
-  .img-d {
-    grid-row: span 1;
-    max-width: 100%;
-    max-height: 100%;
-    overflow: hidden;
-    height: 500px;
-  }
-
-  .txtone,
-  .txtfive,
-  .txtspec,
-  .txttwo,
-  .txtthree,
-  .txtfour {
-    padding-left: 10px;
-    padding-right: 15px;
-  }
-
-  .txtfive {
-    justify-content: flex-start;
-    align-items: flex-end;
-  }
-
-  .txtspec {
-    grid-column: span 1;
-    justify-content: flex-end;
-    height: 100%;
-  }
-
-  .keep {
-    grid-column: span 1;
-    border-radius: 0;
-    height: 250px;
-  }
-
-  .foot {
-    opacity: 0;
-    display: none;
-  }
-
-  footer {
-    justify-content: center;
-    align-items: center;
-  }
-}
-
-/*mobile in landscape*/
-@media (orientation: landscape) {}
+  */
