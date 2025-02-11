@@ -15,13 +15,14 @@ body {
   justify-content: center;
   align-items: center;
   position: fixed;
-  margin-top: -115px;
+  top: 0;
   z-index: 4;
   background-color: black;
   height: 100vh;
   width: 100%;
   animation: load 0.5s linear 2s;
   animation-fill-mode: forwards;
+  height: 100%;
 }
 
 /*z-index specifies seen order, behind or infront of objects.
@@ -31,6 +32,9 @@ Fill-mode changes to css affected by animation becomes permanent until reloaded
 
 .spinner {
   display: fixed;
+  position: fixed;
+  top: auto;
+  left: auto;
   z-index: 5;
   height: 120px;
   width: 120px;
@@ -71,7 +75,16 @@ h1 {
 }
 
 #dropdown {
-  display: flex;
+  top: 100px;
+  position: fixed;
+  z-index: 2;
+  right: -650px;
+  height: 100vh;
+  width: 600px;
+  background-color: #CE7739;
+  overflow: hidden;
+  transition: 0.25s linear;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.7);
 }
 
 .all-bar {
@@ -194,6 +207,7 @@ img {
   justify-content: center;
   background-color: black;
   border-radius: 8px;
+  height: 99%;
 }
 
 .img-y {

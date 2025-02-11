@@ -16,23 +16,19 @@
   <link
     rel="stylesheet"
     href="small-desktop-styles.css"
-    rel="stylesheet"
   />
   <link
     rel="stylesheet"
     href="tablet-styles.css"
-    rel="stylesheet"
   />
   <link
     rel="stylesheet"
     href="mobile-styles.css"
-    rel="stylesheet"
   />
   <!--
   <link
     rel="stylesheet"
     href="mobile-landscape-styles.css"
-    rel="stylesheet"
   />
   -->
   <link
@@ -82,12 +78,21 @@ main body, container, is a grid-->
       >Spirits</a>
     </nav>
     <nav
-      onclick="hamScript()"
+      onclick="hamScript(), changeScript()"
       id="hidden-ham"
     >
-      <div class="all-bar"></div>
-      <div class="all-bar"></div>
-      <div class="all-bar"></div>
+      <div
+        id="bar-one"
+        class="all-bar"
+      ></div>
+      <div
+        id="bar-two"
+        class="all-bar"
+      ></div>
+      <div
+        id="bar-three"
+        class="all-bar"
+      ></div>
     </nav>
   </header>
   <nav id="dropdown">

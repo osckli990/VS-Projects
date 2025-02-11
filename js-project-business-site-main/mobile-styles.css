@@ -4,10 +4,6 @@
     margin: 0;
   }
 
-  .loader {
-    height: 120vh;
-  }
-
   header {
     display: none;
   }

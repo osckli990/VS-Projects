@@ -1,11 +1,5 @@
 /*larger than mobile - tablet */
 @media (min-width: 667px) and (max-width: 1024px) {
-  .loader {
-    height: 110vh;
-  }
-
-  /*started having problems with viewport, where 100% didnt cover the screen*/
-
   header {
     top: 0;
     height: 100px;
@@ -25,17 +19,7 @@
     justify-content: center;
     align-items: center;
     margin-right: 2%;
-    transition: 0.25s;
     cursor: pointer;
-  }
-
-  .all-bar {
-    display: block;
-    width: 35px;
-    height: 3px;
-    background-color: black;
-    margin: 4px 0;
-    transition: 0.25s;
   }
 
   /*
@@ -46,15 +30,23 @@
   }
     */
 
-  .show {
-    top: 100px;
-    display: flex;
-    position: fixed;
-    z-index: 2;
-    right: 0;
-    height: 100vh;
-    width: 500px;
+  .all-bar {
+    display: block;
+    width: 35px;
+    height: 3px;
     background-color: black;
+    margin: 4px 0;
+    transition: 0.25s linear;
+  }
+
+  .change {
+    transition: .25s linear;
+    margin: 0;
+  }
+
+  .show {
+    transition: .25s linear;
+    transform: translateX(-650px);
   }
 
   .container {
